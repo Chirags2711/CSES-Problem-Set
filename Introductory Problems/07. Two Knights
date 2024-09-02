@@ -1,0 +1,11 @@
+// for a particular n
+
+public static long findValidCombinations(int n){
+    // n*n grid = k elements
+    // kC2 - (2(number of 2*3 grids) + 2 (number of 3*2 grids))
+    // kC2 = k * (k-1) / 2
+    // number of 2*3 grids = number of 3*2 grid = (n-1)(n-2), in n * n grid
+    // invalid combinations per small grid = 2
+    long k = (long) n *n;
+    return (k * (k-1) / 2) - (2L * 2 * (n-1) * (n-2));
+}
