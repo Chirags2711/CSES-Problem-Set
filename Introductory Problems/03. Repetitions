@@ -1,0 +1,16 @@
+private static void solve(String s){
+    int ans = 0, smallAns = 0;
+    int n = s.length();
+    char currChar = 'A';
+    for(int i=0; i<n; i++){
+        char ch = s.charAt(i);
+        if(currChar == ch){
+            smallAns++;
+        }else{
+            currChar = ch;
+            smallAns = 1;
+        }
+        ans = Math.max(ans, smallAns);
+    }
+    System.out.println(ans);
+}
