@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class TwoSets {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        solve(n);
+    }
+    private static void solve(int n) {
+        long sum = (long) n * (n+1) / 2;
+        if(sum % 2 == 1){
+            System.out.println("NO");
+            return;
+        }
+        long needed1 = sum / 2;
+        long needed2 = needed1;
+        StringBuilder set1 = new StringBuilder();
+        StringBuilder set2 = new StringBuilder();
+        int count1 = 0, count2 = 0;
+        for(int i=n; i>=1; i--){ // Doubt: Why this works. Also, does not work from 1 to n
+            if(needed1 - i >= 0){
+                set1.append(i);
+                set1.append(' ');
+                count1++;
+                needed1 -= i;
+            }else{
+                set2.append(i);
+                set2.append(' ');
+                count2++;
+                needed2 -= i;
+            }
+        }
+        System.out.println("YES");
+        System.out.println(count1);
+        System.out.println(set1);
+        System.out.println(count2);
+        System.out.println(set2);
+    }
+}
