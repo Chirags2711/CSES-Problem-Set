@@ -9,3 +9,6 @@ public static long findValidCombinations(int n){
     long k = (long) n *n;
     return (k * (k-1) / 2) - (2L * 2 * (n-1) * (n-2));
 }
+
+
+// Credits: Sai Anish Malla
