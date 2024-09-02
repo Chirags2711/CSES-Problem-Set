@@ -1,0 +1,11 @@
+private static long solve(int[] nums, int n) {
+    long ans = 0;
+    for(int i=1;i<n;i++){
+        int diff = nums[i] - nums[i-1];
+        if(diff < 0){
+            ans -= diff;
+            nums[i] -= diff;
+        }
+    }
+    return ans;
+}
